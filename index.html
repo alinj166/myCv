@@ -86,6 +86,37 @@ h3 {
   object-fit: cover; /* Ensures the video covers the area without stretching */
   z-index: -1; /* Keeps the video behind the content */
 }
+
+		.scroll-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+.scroll-down a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+    }
+    40% {
+        transform: translate(-50%, -10px);
+    }
+    60% {
+        transform: translate(-50%, -5px);
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
 	  
 	  </style>
   </head>
@@ -152,6 +183,10 @@ h3 {
 	        </div>
 	      </div>
 	    </div>
+		      <!-- Your existing content -->
+			<div class="scroll-down hero">
+				<a href="#about-section"><span>↓ Scroll Down</span></a>
+			</div>
     </section>
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
@@ -194,6 +229,7 @@ h3 {
 	          </div>
 	        </div>
         </div>
+		
     	</div>
     </section>
 
